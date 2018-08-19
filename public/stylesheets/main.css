@@ -1,0 +1,20 @@
+
+
+
+.thumbnail img {
+    width:100%;
+        border-radius: 5px;
+
+}
+
+.thumbnail .caption-full {
+    padding:9px;
+}
+
+#form-pos{
+    display: inline;
+}
+
+#form-pos-2{
+    display: inline;
+}

@@ -1,0 +1,59 @@
+<! DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+       <link rel="stylesheet" href="/stylesheets/main.css">
+        <title>YelpCamp</title>
+    </head>
+    
+    <body>
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: black; color:white">
+  <a class="navbar-brand" href="/">Yelpcamp</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+     <% if(!currentUser){ %>
+      <li class="nav-item active  ml-3">
+        <a class="nav-link" href="/login">Login</a>
+      </li>
+      <li class="nav-item active ml-3">
+        <a class="nav-link" href="/register">Sign up</a>
+      </li>
+    <%  }  else{ %>
+          <li class="nav-item active mt-2"><a href="#">Signed in as <%=currentUser.username %></a></li>
+
+      <li class="nav-item active ml-3">
+        <a class="nav-link" href="/logout">Sign out</a>
+      </li>
+    <% } %>
+    </ul>
+  </div>
+</nav>
+
+
+<div class="container">
+  
+   <% if(error && error.length >0 ){ %>
+
+  <div class="alert alert-danger" role="alert">
+<%= error %>
+<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<% } %>
+
+ <% if(success && success.length >0 ){ %>
+<div class="alert alert-success" role="alert">
+<%= success %>
+<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+<% } %>
+</div>
+ 
+ 
